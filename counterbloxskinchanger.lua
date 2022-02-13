@@ -550,9 +550,11 @@ mt.__namecall = newcclosure(function(self, ...)
    local args = {...}
    if getnamecallmethod() == "InvokeServer" and tostring(self) == "Hugh" then
        return
+wait()
    end
    if getnamecallmethod() == "FireServer" then
        if args[1] == LocalPlayer.UserId then
+wait()
            return
        end
        if string.len(tostring(self)) == 38 then
@@ -562,10 +564,12 @@ mt.__namecall = newcclosure(function(self, ...)
                    local doSkip
                    for i2,v2 in pairs(args[1]) do
                        if v[1] == v2[1] then
+wait()
                            doSkip = true
                        end
                    end
                    if not doSkip then
+wait()
                        table.insert(args[1], v)
                    end
                end
@@ -575,9 +579,11 @@ mt.__namecall = newcclosure(function(self, ...)
        if tostring(self) == "DataEvent" and args[1][4] then
            local currentSkin = string.split(args[1][4][1], "_")[2]
            if args[1][2] == "Both" then
+wait()
                LocalPlayer["SkinFolder"]["CTFolder"][args[1][3]].Value = currentSkin
                LocalPlayer["SkinFolder"]["TFolder"][args[1][3]].Value = currentSkin
            else
+wait()
                LocalPlayer["SkinFolder"][args[1][2] .. "Folder"][args[1][3]].Value = currentSkin
            end
        end
@@ -586,7 +592,8 @@ mt.__namecall = newcclosure(function(self, ...)
 end)
    
 setreadonly(mt, true)
- 
+
+wait()
 Client.CurrentInventory = allSkins
  
 local TClone, CTClone = LocalPlayer.SkinFolder.TFolder:Clone(), game.Players.LocalPlayer.SkinFolder.CTFolder:Clone()
